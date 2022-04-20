@@ -41,4 +41,22 @@ public class Graph<E>
         }
         return answer;
     }
+    
+    // Remove an edge
+    public void removeEdge(int source, int target) {
+        edges[source][target] = false;
+    }
+
+    // Change the label of a vertex of this Graph
+    public void setLabel(int vertex, E newLabel) {
+        labels[vertex] = newLabel;
+    }
+
+    // Accessor method to determine the number of vertices in this Graph
+    public int size() {
+        return labels.length;
+    }
+
+
+
 }
