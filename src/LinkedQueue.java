@@ -42,6 +42,12 @@ public class LinkedQueue<T> implements QueueInterface<T>
            return firstNode.getData();
      }
   
+  public boolean isEmpty()
+   {
+      return (firstNode == null) && (lastNode == null);
+   } // end isEmpty
+
+
   /***
      * Creates nodes that can be used in other classes
      */
