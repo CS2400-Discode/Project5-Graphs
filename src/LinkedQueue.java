@@ -34,7 +34,13 @@ public class LinkedQueue<T> implements QueueInterface<T>
         return front;
   } // end dequeue
 
-  
+   public T getFront()
+     {
+        if (isEmpty())
+           throw new EmptyQueueException();
+        else
+           return firstNode.getData();
+     }
   
   /***
      * Creates nodes that can be used in other classes
