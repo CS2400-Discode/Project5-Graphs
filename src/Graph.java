@@ -1,4 +1,4 @@
-public class Graph<E>
+public class Graph<E> implements GraphInterface<E>
 {
     private boolean[][] edges; // edges[i][j] is true if there is a vertex from i to j
     private E[] labels; // labels[i] contains the label for vertex i  
