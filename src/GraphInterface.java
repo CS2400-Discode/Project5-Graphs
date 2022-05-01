@@ -1,4 +1,4 @@
-public interface GraphInterface<E> implements QueueInterface<T>
+public interface GraphInterface<T>
 {
   public boolean isEdge(int source, int target);
 
@@ -12,7 +12,7 @@ public interface GraphInterface<E> implements QueueInterface<T>
     public void removeEdge(int source, int target);
 
     // Change the label of a vertex of this Graph
-    public void setLabel(int vertex, E newLabel);
+    public void setLabel(int vertex, T newLabel);
 
     // Accessor method to determine the number of vertices in this Graph
     public int size();
