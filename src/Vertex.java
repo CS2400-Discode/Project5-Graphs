@@ -5,7 +5,7 @@ public class Vertex<T> implements VertexInterface<T> {
 
     private T label;
     private boolean visited;
-    private List<Vertex<T>> edgeList = new LinkedList<>();
+    private List<Vertex<T>> edgeList = new LinkedList<>();      // not sure about this
 
     public Vertex(T vertexLabel)
     {
@@ -20,6 +20,10 @@ public class Vertex<T> implements VertexInterface<T> {
 
     public void visit(){
         visited = true;
+    }
+
+    public boolean isVisited() {
+        return visited;
     }
 
 }

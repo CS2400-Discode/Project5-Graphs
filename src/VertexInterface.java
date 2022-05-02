@@ -1,4 +1,5 @@
 public interface VertexInterface<T> {
+    
 
     /** Gets this vertex's label.
      @return  The object that labels the vertex. */
@@ -6,4 +7,6 @@ public interface VertexInterface<T> {
 
     /** Marks this vertex as visited. */
     public void visit();
+
+    public boolean isVisited();
 }
