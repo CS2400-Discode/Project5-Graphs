@@ -96,9 +96,18 @@ public class LinkedDictionary<K extends Comparable<? super K>, V>
         return result;
     }
 
-    // NOT DONE
+    // returns value if found, or NULL
     public V getValue(K key)
     {
+        V result = null;
+        Node currentNode = firstNode;
+     
+      while ( (currentNode != null) && (key.compareTo(currentNode.getKey()) > 0) )
+            {
+                nodeBefore = currentNode;
+                currentNode = currentNode.getNextNode();
+            } // end while
+  
         return null;
     }
 
