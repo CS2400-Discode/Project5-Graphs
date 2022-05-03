@@ -69,10 +69,31 @@ public class LinkedDictionary<K extends Comparable<? super K>, V>
         return result;
     } // end add
 
-    // NOT DONE
+    // returns value if found, or NULL
     public V remove(K key)
     {
-    return null;
+            V result = null;
+     
+            // Search chain until you either find a node containing key
+            // or locate where it should be
+            Node currentNode = firstNode;
+            Node nodeBefore = null;
+
+            while ( (currentNode != null) && (key.compareTo(currentNode.getKey()) > 0) )
+            {
+                nodeBefore = currentNode;
+                currentNode = currentNode.getNextNode();
+            } // end while
+
+            if ( (currentNode != null) && key.equals(currentNode.getKey()) )
+            {
+                // Key in dictionary; remove key
+                result = currentNode.getValue(); // Get old value
+                currentNode = currentNode.getNextNode(); // Replace node with next node
+                nodeBefore.setNextNode(currentNode); // nodeBefore is before replaced node
+                numberOfEntries--;                   // Decrease length 
+            } // end if
+        return result;
     }
 
     // NOT DONE
