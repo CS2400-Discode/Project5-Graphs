@@ -110,13 +110,24 @@ public class LinkedDictionary<K extends Comparable<? super K>, V>
       if ( (currentNode != null) && key.equals(currentNode.getKey()) )
       { result = currentNode.getValue(); }
   
-        return null;
+        return result;
     }
 
-    // NOT DONE
+    // returns true if found
     public boolean contains(K key)
     {
-        return false;
+        Node currentNode = firstNode;
+     
+      while ( (currentNode != null) && (key.compareTo(currentNode.getKey()) > 0) )
+            {
+                currentNode = currentNode.getNextNode();
+            } // end while
+     
+      if ( (currentNode != null) && key.equals(currentNode.getKey()) )
+      { return true;}
+     
+      else {return false;}
+
     }
 
     // NOT DONE
