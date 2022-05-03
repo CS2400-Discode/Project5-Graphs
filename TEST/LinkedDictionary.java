@@ -104,9 +104,11 @@ public class LinkedDictionary<K extends Comparable<? super K>, V>
      
       while ( (currentNode != null) && (key.compareTo(currentNode.getKey()) > 0) )
             {
-                nodeBefore = currentNode;
                 currentNode = currentNode.getNextNode();
             } // end while
+     
+      if ( (currentNode != null) && key.equals(currentNode.getKey()) )
+      { result = currentNode.getValue(); }
   
         return null;
     }
