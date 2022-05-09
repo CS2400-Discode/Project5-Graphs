@@ -1,59 +1,63 @@
+package ADTPackage;
+
+import ADTPackage.QueueInterface;
+
 public class LinkedQueue<T> implements QueueInterface<T>
 {
-  private Node firstNode;
-  private Node lastNode;
-  
-  public LinkedQueue()
-  {
-    firstNode = null;
-    lastNode = null;
-  }
-  
-  public void enqueue(T newEntry)
-  {
-    Node newNode = new Node(newEntry, null);
-    
-    if (isEmpty())
-      firstNode = newNode;
-    else
-      lastNode.setNextNode(newNode);
-      
-    lastNode = newNode;
-  }
-  
-  public T dequeue()
-   {
+    private Node firstNode;
+    private Node lastNode;
+
+    public LinkedQueue()
+    {
+        firstNode = null;
+        lastNode = null;
+    }
+
+    public void enqueue(T newEntry)
+    {
+        Node newNode = new Node(newEntry, null);
+
+        if (isEmpty())
+            firstNode = newNode;
+        else
+            lastNode.setNextNode(newNode);
+
+        lastNode = newNode;
+    }
+
+    public T dequeue()
+    {
         T front = getFront();  // Might throw EmptyQueueException
-                               // Assertion: firstNode != null
+        // Assertion: firstNode != null
         firstNode.setData(null);
         firstNode = firstNode.getNextNode();
 
         if (firstNode == null)
-           lastNode = null;
+            lastNode = null;
 
         return front;
-  } // end dequeue
+    } // end dequeue
 
-   public T getFront()
-     {
+    public T getFront()
+    {
         if (isEmpty())
-           throw new IllegalStateException();
+            throw new IllegalStateException();
         else
-           return firstNode.getData();
-     }
-  
-  public boolean isEmpty()
-   {
-      return (firstNode == null) && (lastNode == null);
-   } // end isEmpty
+            return firstNode.getData();
+    }
 
-  public void clear()
-     {
+    public boolean isEmpty()
+    {
+        return (firstNode == null) && (lastNode == null);
+    } // end isEmpty
+
+    public void clear()
+    {
         firstNode = null;
         lastNode = null;
-     } // end clear
+    } // end clear
 
-  /***
+    /***
      * Creates nodes that can be used in other classes
      */
     private class Node

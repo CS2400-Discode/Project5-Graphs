@@ -7,7 +7,6 @@ import java.util.NoSuchElementException;
  A class that implements the ADT dictionary by using a chain of linked nodes.
  The dictionary is sorted and has distinct search keys.
  Search keys and associated values are not null.
-
  @author Frank M. Carrano
  @author Timothy M. Henry
  @version 5.0
@@ -72,27 +71,27 @@ public class LinkedDictionary<K extends Comparable<? super K>, V>
     // returns value if found, or NULL
     public V remove(K key)
     {
-            V result = null;
-     
-            // Search chain until you either find a node containing key
-            // or locate where it should be
-            Node currentNode = firstNode;
-            Node nodeBefore = null;
+        V result = null;
 
-            while ( (currentNode != null) && (key.compareTo(currentNode.getKey()) > 0) )
-            {
-                nodeBefore = currentNode;
-                currentNode = currentNode.getNextNode();
-            } // end while
+        // Search chain until you either find a node containing key
+        // or locate where it should be
+        Node currentNode = firstNode;
+        Node nodeBefore = null;
 
-            if ( (currentNode != null) && key.equals(currentNode.getKey()) )
-            {
-                // Key in dictionary; remove key
-                result = currentNode.getValue(); // Get old value
-                currentNode = currentNode.getNextNode(); // Replace node with next node
-                nodeBefore.setNextNode(currentNode); // nodeBefore is before replaced node
-                numberOfEntries--;                   // Decrease length 
-            } // end if
+        while ( (currentNode != null) && (key.compareTo(currentNode.getKey()) > 0) )
+        {
+            nodeBefore = currentNode;
+            currentNode = currentNode.getNextNode();
+        } // end while
+
+        if ( (currentNode != null) && key.equals(currentNode.getKey()) )
+        {
+            // Key in dictionary; remove key
+            result = currentNode.getValue(); // Get old value
+            currentNode = currentNode.getNextNode(); // Replace node with next node
+            nodeBefore.setNextNode(currentNode); // nodeBefore is before replaced node
+            numberOfEntries--;                   // Decrease length
+        } // end if
         return result;
     }
 
@@ -101,15 +100,15 @@ public class LinkedDictionary<K extends Comparable<? super K>, V>
     {
         V result = null;
         Node currentNode = firstNode;
-     
-      while ( (currentNode != null) && (key.compareTo(currentNode.getKey()) > 0) )
-            {
-                currentNode = currentNode.getNextNode();
-            } // end while
-     
-      if ( (currentNode != null) && key.equals(currentNode.getKey()) )
-      { result = currentNode.getValue(); }
-  
+
+        while ( (currentNode != null) && (key.compareTo(currentNode.getKey()) > 0) )
+        {
+            currentNode = currentNode.getNextNode();
+        } // end while
+
+        if ( (currentNode != null) && key.equals(currentNode.getKey()) )
+        { result = currentNode.getValue(); }
+
         return result;
     }
 
@@ -117,16 +116,16 @@ public class LinkedDictionary<K extends Comparable<? super K>, V>
     public boolean contains(K key)
     {
         Node currentNode = firstNode;
-     
-      while ( (currentNode != null) && (key.compareTo(currentNode.getKey()) > 0) )
-            {
-                currentNode = currentNode.getNextNode();
-            } // end while
-     
-      if ( (currentNode != null) && key.equals(currentNode.getKey()) )
-      { return true;}
-     
-      else {return false;}
+
+        while ( (currentNode != null) && (key.compareTo(currentNode.getKey()) > 0) )
+        {
+            currentNode = currentNode.getNextNode();
+        } // end while
+
+        if ( (currentNode != null) && key.equals(currentNode.getKey()) )
+        { return true;}
+
+        else {return false;}
 
     }
 

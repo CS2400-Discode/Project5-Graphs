@@ -1,3 +1,7 @@
+package ADTPackage;
+
+import ADTPackage.StackInterface;
+
 import java.util.EmptyStackException;
 
 /***
