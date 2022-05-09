@@ -7,15 +7,12 @@ Owen Lovett, Nil Patel, Shane Thomas
 
 Contributions:
 -
-Shane Thomas:
+Shane Thomas: Traversal Methods / Debugging
 
-Owen Lovett:
+Owen Lovett: Main method / Debugging
 
-Nil Patel:
+Nil Patel: Main method / Debugging
 
 Extra Features:
 -
-Unit Tests using JUnit
-
-Video Link:
-- 
+Generics / Interfaces
